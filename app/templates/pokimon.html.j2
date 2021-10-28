@@ -6,13 +6,13 @@ Pokemon Results
 
 {% block content%}
 <h1> Pokemon Standing </h1>
-<form method="POST" action="/pokimon">
-  <div class="mb-3">
-    <label for="name" class="form-label">Pokemon Name</label>
-    <input type="text" name="name" class="form-control" id="name">
-  </div>
+<form action="{{url_for('pokimon')}}" method="POST">
+{{ form.hidden_tag() }}
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+{{ form.name.label(class="form-label") }}
+{{ form.name(class="form-control") }}
+<br>
+{{form.submit(class="btn btn-primary form-control")}}
 </form>
 {% if pokis %}
 <table class="table">
