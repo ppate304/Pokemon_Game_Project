@@ -1,46 +1,48 @@
 {% extends 'base.html.j2' %}
+{%block css%}
+ <link rel="stylesheet" href="{{url_for('static',filename='css/pokimon.css')}}">
+{%endblock%}
 
 {% block title %}
 Pokemon Results 
 {% endblock %}
 
 {% block content%}
-<h1> Pokemon Standing </h1>
-<form action="{{url_for('pokimon')}}" method="POST">
-{{ form.hidden_tag() }}
+  <h1> Pokemon Standing </h1>
+  <form action="{{url_for('main.pokimon')}}" method="POST">
+  {{ form.hidden_tag() }}
 
-{{ form.name.label(class="form-label") }}
-{{ form.name(class="form-control") }}
-<br>
-{{form.submit(class="btn btn-primary form-control")}}
-</form>
-{% if pokis %}
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">First Name</th>
-      <th scope="col">Abilities</th>
-      <th scope="col">Base Experience</th>
-      <th scope="col">Sprite</th>
-      <th scope="col">Hp</th>
-      <th scope="col">Attack</th>
-      <th scope="col">Defense</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for poki in pokis %}
-      <tr>
-        <th scope="row">{{poki.Name}}</th>
-        <td>{{poki.abilities}}</td>
-        <td>{{poki.base_experience}}</td>
-        <td>{{poki.sprite}}</td>
-        <td>{{poki.hp}}</td>
-        <td>{{poki.attack}}</td>
-        <td>{{poki.defense}}</td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
-  {% else %}
-{% endif %}
+  {{ form.name.label(class="form-label") }}
+  {{ form.name(class="form-control") }}
+  <br>
+  {{form.submit(class="btn btn-primary form-control")}}
+  </form>
+  {% if pokis %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Abilities</th>
+          <th scope="col">Base Experience</th>
+          <th scope="col">Sprite</th>
+          <th scope="col">Hp</th>
+          <th scope="col">Attack</th>
+          <th scope="col">Defense</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for poki in pokis %}
+          <tr>
+            <th scope="row">{{poki.Name}}</th>
+            <td>{{poki.abilities}}</td>
+            <td>{{poki.base_experience}}</td>
+            <td>{{poki.sprite}}</td>
+            <td>{{poki.hp}}</td>
+            <td>{{poki.attack}}</td>
+            <td>{{poki.defense}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
 {% endblock %}
