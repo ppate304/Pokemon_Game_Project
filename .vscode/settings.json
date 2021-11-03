@@ -1,0 +1,49 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "movies_database",
+            "connectString": "postgres://hyxyvtej:fAMCDY-I6Q5MUNYAmGRSXDcqMchEeY-z@fanny.db.elephantsql.com/hyxyvtej"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "week4_day3",
+            "connectString": "postgres://geajoxzh:7K74ttzpSSUVn7S8s6C9znc_HNUbdH31@fanny.db.elephantsql.com/geajoxzh"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "president_join.sessions",
+            "connectString": "postgres://fmpnopqm:pOqCFHthkqUswTJWoSXNY6xuhc_ekFmd@fanny.db.elephantsql.com/fmpnopqm"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "connectString": "postgres://nkouhspi:1rse7qQFLqotU4PxpLnQMEbOCd9Z6ms6@fanny.db.elephantsql.com/nkouhspi",
+            "name": "dvdrental"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "Week5Day1Hwk",
+            "connectString": "postgres://fuuqlxuz:WLOmqecglvcn7QxHbw8Rr4f5rCswwfp_@fanny.db.elephantsql.com/fuuqlxuz"
+        }
+    ]
+}

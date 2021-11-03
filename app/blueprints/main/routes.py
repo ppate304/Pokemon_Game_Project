@@ -3,6 +3,7 @@ import requests
 from .forms import PokimonForm
 from flask_login import login_required
 from .import bp as main
+from app.models import Post
 
 @main.route('/home')
 @login_required
@@ -30,7 +31,13 @@ def pokimon():
             poki_dict['sprite'] = data['sprites']['front_shiny']
             poki_dict['hp'] = data['stats'][0]['base_stat']
             poki_dict['attack'] = data['stats'][1]['base_stat']
-            poki_dict['defense'] = data['stats'][2]['base_stat']   
+            poki_dict['defense'] = data['stats'][2]['base_stat'] 
+
+           
+            new_poki_object = Post()
+            new_poki_object.from_dict(poki_dict)
+            new_poki_object.save()
+ 
             poki_name.append(poki_dict) 
             print(poki_name)
             return render_template('/pokimon.html.j2', pokis=poki_name, form=form)
@@ -39,3 +46,4 @@ def pokimon():
             return "We had a problem"
     
     return render_template('pokimon.html.j2', form=form)
+
