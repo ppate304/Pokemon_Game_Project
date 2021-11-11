@@ -1,9 +1,9 @@
-from flask import render_template, request
+from flask import render_template, request, url_for, redirect, flash
 import requests
 from .forms import PokimonForm
-from flask_login import login_required
+from flask_login import login_required, current_user
 from .import bp as main
-from app.models import Post
+from app.models import Pokemon
 
 @main.route('/home')
 @login_required
@@ -34,7 +34,7 @@ def pokimon():
             poki_dict['defense'] = data['stats'][2]['base_stat'] 
 
            
-            new_poki_object = Post()
+            new_poki_object = Pokemon()
             new_poki_object.from_dict(poki_dict)
             new_poki_object.save()
  

@@ -1,0 +1,23 @@
+{% extends 'base.html.j2' %}
+{%block css%}
+ <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+{%endblock%}
+{% block content %}
+{% for poki_points in users %}
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="" class="img-fluid rounded-start" alt="avatar">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{poki_points.first_name}} {{poki_points.last_name}}</h5>
+                <p class="card-text">Users Points</p>
+                <a href="/show_points/{{poki_points.id}}"> </a>
+            </div>
+            </div>
+        </div>
+     </div>  
+    {% endfor %}
+
+{% endblock %}
